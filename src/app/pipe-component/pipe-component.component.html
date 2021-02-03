@@ -1,5 +1,11 @@
 <p>{{ 'testo tutto in minuscolo, ma che diventa maiuscolo' | uppercase }}</p>
 
+<!--
+  È possibile specificare parametri nelle pipe `collegandoli` tramite il carattere :
+  Nell'esempio qui sotto, alla pipe `date` viene passato come valore per il parametro
+  `format` la stringa 'dd/MM/yyyy' che verrà utilizzata per rappresentare graficamente
+  il valore dell'oggetto today (che è una data)
+ -->
 <p>{{ today | date:'dd/MM/yyyy' }}</p>
 
 <p>{{ 'Corso Full Stack Developer Junior 2021' | stringLength:true }}</p>

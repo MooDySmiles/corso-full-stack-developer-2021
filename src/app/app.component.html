@@ -1,3 +1,9 @@
+<!--
+  [courseName] -> data binding di una proprietà di input: in questo modo la proprietà del figlio courseName prenderà il valore
+                  della proprietà title di questo componente
+  (primoOutput)-> data binding di una proprietà di output: in questo modo quando primoOutput del figlio emette un evento con un valore
+                  questo componente sarà in grado di stare in ascolto dell'evento, riuscendo a catturarne anche il valore passato
+-->
 <app-primo
   [courseName]="title"
   (primoOutput)="onPrimoOutput($event)"
@@ -6,6 +12,13 @@
 <button (click)="onCambiaMetodoLink()">Visualizza bottoni/link</button>
 
 <p *ngIf="showButtonLink">
+  <!--
+    routerLink è una direttiva fornita dal RouterModule, ci permette di creare link di navigazione tra le pagine della nostra
+    applicazione
+
+    se il valore passato in ingresso non inizia con la barra /, allora Angular lo gestisce come un path relativo, altrimenti come
+    un path assoluto partendo dalla radice
+   -->
   <button routerLink="/direttive-strutturali">Direttive Strutturali</button>
   <button routerLink="/direttive-attributo">Direttive Attributo</button>
   <button routerLink="/pipe">Pipe</button>
@@ -23,6 +36,11 @@
 
 <p>Qui sotto verranno caricati i componenti quando si naviga l'applicazione</p>
 
+<!--
+  router-outlet è una direttiva fornita dal RouterModule, indica ad Angular in quale punto dell'HTML
+  di questo route andare ad inserire il codice HTML presente nel template del componente che viene
+  caricato in questa route
+ -->
 <router-outlet></router-outlet>
 
 <!-- Tutti i componenti sotto adesso sono delle pagine a se stanti -->

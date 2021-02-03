@@ -7,6 +7,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
+  /**
+   * Input property che hanno un valore di default
+   * Se il padre non passa nessun valore, verranno usate
+   * queste di default
+   */
   @Input() buttonText: string = 'Click me!';
   @Input() emitValue: any = 'Default value';
 

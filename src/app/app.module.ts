@@ -13,6 +13,17 @@ import { PowPipe } from './pow.pipe';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+/**
+ * Oggetto di configurazione dei route di navigazione.
+ *
+ * Ogni oggetto Route ha le seguenti proprietà base:
+ *
+ *  path - indica un indirizzo URL relativo alla mia applicazione
+ *
+ *  component - indica qual è il componente da caricare quando l'utente naviga tale indirizzo URL
+ *
+ *  redirectTo - indica qual è l'URL da navigare quando si naviga in questo URL
+ */
 const routes: Routes = [
   {
     path: 'direttive-strutturali',
@@ -55,6 +66,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    // .forRoot() accetta un oggetto di configurazione con la lista di rotte definite da noi
     RouterModule.forRoot(routes),
   ],
   providers: [],
