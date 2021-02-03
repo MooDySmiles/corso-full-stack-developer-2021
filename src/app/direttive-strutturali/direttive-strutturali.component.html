@@ -1,0 +1,21 @@
+<div>
+  <p *ngIf="showP">Sono un *ngIf</p>
+  <app-button
+    buttonText="Mostra/Nascondi tag p"
+    (eventEmitter)="onMostraNascodiP()"
+  ></app-button>
+</div>
+
+<div>
+  <p>Sono un *ngFor</p>
+  <span *ngFor="let element of myArray; last as isLast">
+    {{ element }}{{ isLast === true ? '.' : ', ' }}
+    <!-- {{ isLast ? '.' : ', ' }} -->
+    <!-- if ternario
+    if(isLast === true) {
+      '.';
+    } else {
+      ', ';
+    } -->
+  </span>
+</div>
