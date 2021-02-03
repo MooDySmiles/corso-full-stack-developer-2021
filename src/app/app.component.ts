@@ -10,6 +10,12 @@ export class AppComponent {
 
   today = new Date();
 
+  showButtonLink = false;
+
+  onCambiaMetodoLink() {
+    this.showButtonLink = !this.showButtonLink;
+  }
+
   onPrimoOutput(event: number) {
     console.warn(event);
   }

@@ -1,9 +1,32 @@
-<!-- inserire qui tag di primo.component -->
 <app-primo
   [courseName]="title"
   (primoOutput)="onPrimoOutput($event)"
 ></app-primo>
 
+<button (click)="onCambiaMetodoLink()">Visualizza bottoni/link</button>
+
+<p *ngIf="showButtonLink">
+  <button routerLink="/direttive-strutturali">Direttive Strutturali</button>
+  <button routerLink="/direttive-attributo">Direttive Attributo</button>
+  <button routerLink="/pipe">Pipe</button>
+  <button routerLink="service">Service</button>
+</p>
+
+<p class="links" *ngIf="!showButtonLink">
+  <a routerLink="/direttive-strutturali">Direttive Strutturali</a>
+  <a routerLink="/direttive-attributo">Direttive Attributo</a>
+  <a routerLink="/pipe">Pipe</a>
+  <a routerLink="/service">Service</a>
+</p>
+
+<hr>
+
+<p>Qui sotto verranno caricati i componenti quando si naviga l'applicazione</p>
+
+<router-outlet></router-outlet>
+
+<!-- Tutti i componenti sotto adesso sono delle pagine a se stanti -->
+<!--
 <p>
   <app-button (eventEmitter)="onButtonEventEmitter($event)"></app-button>
 </p>
@@ -33,4 +56,4 @@
 
 <hr>
 
-<app-service-component></app-service-component>
+<app-service-component></app-service-component> -->

@@ -10,6 +10,35 @@ import { PipeComponentComponent } from './pipe-component/pipe-component.componen
 import { StringLengthPipe } from './string-length.pipe';
 import { ServiceComponentComponent } from './service-component/service-component.component';
 import { PowPipe } from './pow.pipe';
+import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+const routes: Routes = [
+  {
+    path: 'direttive-strutturali',
+    component: DirettiveStrutturaliComponent,
+  },
+  {
+    path: 'direttive-attributo',
+    component: DirettiveAttributoComponent,
+  },
+  {
+    path: 'pipe',
+    component: PipeComponentComponent,
+  },
+  {
+    path: 'service',
+    component: ServiceComponentComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'page-not-found',
+  },
+  {
+    path: 'page-not-found',
+    component: PageNotFoundComponent,
+  }
+];
 
 @NgModule({
   declarations: [
@@ -22,9 +51,11 @@ import { PowPipe } from './pow.pipe';
     StringLengthPipe,
     ServiceComponentComponent,
     PowPipe,
+    PageNotFoundComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
