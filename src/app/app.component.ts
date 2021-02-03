@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'prova';
+  title = 'Corso Angular Maggioli Academy 2021';
+
+  today = new Date();
+
+  onPrimoOutput(event: number) {
+    console.warn(event);
+  }
+
+  onButtonEventEmitter(data) {
+    console.error(data);
+  }
 }
