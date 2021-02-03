@@ -1,0 +1,16 @@
+<app-button
+  buttonText="Esegui elevamento a potenza"
+  (eventEmitter)="onElevaPotenza()"
+></app-button>
+
+<p *ngIf="result">
+  Risultato elevamento a potenza di {{ base }} e {{ exponent }}: {{ result }}
+</p>
+
+<p>
+  Risultato di 10 alla seconda: {{ 10 | pow }}
+</p>
+
+<p>
+  Risultato di 10 alla quarta: {{ 10 | pow:4 }}
+</p>

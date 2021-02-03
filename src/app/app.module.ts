@@ -8,6 +8,8 @@ import { DirettiveStrutturaliComponent } from './direttive-strutturali/direttive
 import { DirettiveAttributoComponent } from './direttive-attributo/direttive-attributo.component';
 import { PipeComponentComponent } from './pipe-component/pipe-component.component';
 import { StringLengthPipe } from './string-length.pipe';
+import { ServiceComponentComponent } from './service-component/service-component.component';
+import { PowPipe } from './pow.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { StringLengthPipe } from './string-length.pipe';
     DirettiveAttributoComponent,
     PipeComponentComponent,
     StringLengthPipe,
+    ServiceComponentComponent,
+    PowPipe,
   ],
   imports: [
     BrowserModule
