@@ -1,0 +1,15 @@
+<div>
+  <!-- { key: value } => { class: condition } -->
+  <p [ngClass]="{ 'prima': addPrimaClass }">Sono un ngClass</p>
+  <app-button
+    buttonText="Cambia colore al tag p"
+    (eventEmitter)="onCambiaClassP()"
+  ></app-button>
+</div>
+
+<div>
+  <!-- { key: value } => { styleAttribute: value } -->
+  <p [ngStyle]="{ 'color': colorP }" (click)="onTagPClick()">
+    Sono un ngStyle, cliccami per farmi cambiare colore
+  </p>
+</div>
