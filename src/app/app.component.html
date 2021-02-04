@@ -1,77 +1,79 @@
-<!--
-  [courseName] -> data binding di una proprietà di input: in questo modo la proprietà del figlio courseName prenderà il valore
-                  della proprietà title di questo componente
-  (primoOutput)-> data binding di una proprietà di output: in questo modo quando primoOutput del figlio emette un evento con un valore
-                  questo componente sarà in grado di stare in ascolto dell'evento, riuscendo a catturarne anche il valore passato
--->
-<app-primo
+<div class="container">
+  <!--
+    [courseName] -> data binding di una proprietà di input: in questo modo la proprietà del figlio courseName prenderà il valore
+                    della proprietà title di questo componente
+    (primoOutput)-> data binding di una proprietà di output: in questo modo quando primoOutput del figlio emette un evento con un valore
+                    questo componente sarà in grado di stare in ascolto dell'evento, riuscendo a catturarne anche il valore passato
+  -->
+  <app-primo
   [courseName]="title"
   (primoOutput)="onPrimoOutput($event)"
-></app-primo>
+  ></app-primo>
 
-<button (click)="onCambiaMetodoLink()">Visualizza bottoni/link</button>
+  <button class="btn btn-primary" (click)="onCambiaMetodoLink()">Visualizza bottoni/link</button>
 
-<p *ngIf="showButtonLink">
+  <p *ngIf="showButtonLink">
   <!--
     routerLink è una direttiva fornita dal RouterModule, ci permette di creare link di navigazione tra le pagine della nostra
     applicazione
 
     se il valore passato in ingresso non inizia con la barra /, allora Angular lo gestisce come un path relativo, altrimenti come
     un path assoluto partendo dalla radice
-   -->
+  -->
   <button routerLink="/direttive-strutturali">Direttive Strutturali</button>
   <button routerLink="/direttive-attributo">Direttive Attributo</button>
   <button routerLink="/pipe">Pipe</button>
   <button routerLink="service">Service</button>
-</p>
+  </p>
 
-<p class="links" *ngIf="!showButtonLink">
+  <p class="links" *ngIf="!showButtonLink">
   <a routerLink="/direttive-strutturali">Direttive Strutturali</a>
   <a routerLink="/direttive-attributo">Direttive Attributo</a>
   <a routerLink="/pipe">Pipe</a>
   <a routerLink="/service">Service</a>
-</p>
+  </p>
 
-<hr>
+  <hr>
 
-<p>Qui sotto verranno caricati i componenti quando si naviga l'applicazione</p>
+  <p>Qui sotto verranno caricati i componenti quando si naviga l'applicazione</p>
 
-<!--
+  <!--
   router-outlet è una direttiva fornita dal RouterModule, indica ad Angular in quale punto dell'HTML
   di questo route andare ad inserire il codice HTML presente nel template del componente che viene
   caricato in questa route
- -->
-<router-outlet></router-outlet>
+  -->
+  <router-outlet></router-outlet>
 
-<!-- Tutti i componenti sotto adesso sono delle pagine a se stanti -->
-<!--
-<p>
+  <!-- Tutti i componenti sotto adesso sono delle pagine a se stanti -->
+  <!--
+  <p>
   <app-button (eventEmitter)="onButtonEventEmitter($event)"></app-button>
-</p>
-<p>
+  </p>
+  <p>
   <app-button
     emitValue="Questo non è il valore di default"
     (eventEmitter)="onButtonEventEmitter($event)"></app-button>
-</p>
-<p>
+  </p>
+  <p>
   <app-button
     buttonText="<i><b>Cliccami! Dai!!!</b></i>"
     [emitValue]="today"
     (eventEmitter)="onButtonEventEmitter($event)"></app-button>
-</p>
+  </p>
 
-<hr>
+  <hr>
 
-<app-direttive-strutturali></app-direttive-strutturali>
+  <app-direttive-strutturali></app-direttive-strutturali>
 
-<hr>
+  <hr>
 
-<app-direttive-attributo> </app-direttive-attributo>
+  <app-direttive-attributo> </app-direttive-attributo>
 
-<hr>
+  <hr>
 
-<app-pipe-component></app-pipe-component>
+  <app-pipe-component></app-pipe-component>
 
-<hr>
+  <hr>
 
-<app-service-component></app-service-component> -->
+  <app-service-component></app-service-component> -->
+</div>
