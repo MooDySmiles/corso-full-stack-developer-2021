@@ -1,0 +1,47 @@
+<!-- Gestione singola input tramite singolo oggetto FormControl -->
+<!-- <form>
+  <div class="”form-group”">
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      required
+      [formControl]="heroNome"
+    />
+  </div>
+</form> -->
+
+<!-- Gestione di un intero form che contiene più controlli -->
+<form [formGroup]="heroForm" (ngSubmit)="onHeroFormSubmit()">
+  <div class="”form-group”">
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      formControlName="nome"
+    />
+  </div>
+  <div class="”form-group”">
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      formControlName="power"
+    />
+  </div>
+  <div>
+    <button class="btn btn-danger" type="button" (click)="onPatchForm()">Cambia potere</button>
+    <button class="btn btn-secondary" type="reset">Reset</button>
+    <button class="btn btn-primary" type="submit">Invia</button>
+  </div>
+</form>
+<hr>
+<div>Stato form eroe: {{ heroForm.status }}</div>
+<div>Stato nome eroe: <pre>{{ heroForm.get('nome').errors | json }}</pre></div>
+<div>Stato power eroe: <pre>{{ heroForm.get('power').errors | json }}</pre></div>
+<hr>
+<div>Valore oggetto nome eroe: {{ heroForm.get('nome').value }}</div>
+<div>Valore oggetto potere eroe: {{ heroForm.get('power').value }}</div>
+<hr>
+<div>Nome eroe: {{ myHero.nome }}</div>
+<div>Potere eroe: {{ myHero.power }}</div>

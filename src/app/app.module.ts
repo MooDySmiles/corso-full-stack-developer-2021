@@ -13,7 +13,8 @@ import { PowPipe } from './pow.pipe';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 /**
  * Oggetto di configurazione dei route di navigazione.
@@ -48,6 +49,10 @@ const routes: Routes = [
     component: TemplateDrivenComponent,
   },
   {
+    path: 'reactive',
+    component: ReactiveComponent,
+  },
+  {
     path: 'page-not-found',
     component: PageNotFoundComponent,
   },
@@ -70,6 +75,7 @@ const routes: Routes = [
     PowPipe,
     PageNotFoundComponent,
     TemplateDrivenComponent,
+    ReactiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +83,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     // Ci serve per far funzionare i form Template-Driven per l'utilizzo delle direttive ngModel e ngForm
     FormsModule,
+    // Ci serve per far funzionare i form Reactive per l'utilizzo delle direttive formGroup e formControl/formControlName
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
