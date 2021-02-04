@@ -1,0 +1,20 @@
+<button class="btn btn-primary" (click)="onRecuperaLukeSkywalker()">Recupera informazioni su Luke Skywalker</button>
+
+<div *ngIf="swapiResult">
+  <div>
+    Nome: {{ swapiResult.name }}
+  </div>
+  <div>
+    Swapi result: <pre>{{ swapiResult | json }}</pre>
+  </div>
+</div>
+
+<hr>
+
+<button class="btn btn-danger" (click)="onRecuperaErrore()">Genera errore chiamata HTTP</button>
+
+<div *ngIf="error">
+  <div>
+    Errore: <pre>{{ error | json }}</pre>
+  </div>
+</div>

@@ -15,6 +15,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AngularHttpComponent } from './angular-http/angular-http.component';
 
 /**
  * Oggetto di configurazione dei route di navigazione.
@@ -53,6 +55,10 @@ const routes: Routes = [
     component: ReactiveComponent,
   },
   {
+    path: 'angular-http',
+    component: AngularHttpComponent,
+  },
+  {
     path: 'page-not-found',
     component: PageNotFoundComponent,
   },
@@ -76,6 +82,7 @@ const routes: Routes = [
     PageNotFoundComponent,
     TemplateDrivenComponent,
     ReactiveComponent,
+    AngularHttpComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +92,7 @@ const routes: Routes = [
     FormsModule,
     // Ci serve per far funzionare i form Reactive per l'utilizzo delle direttive formGroup e formControl/formControlName
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
