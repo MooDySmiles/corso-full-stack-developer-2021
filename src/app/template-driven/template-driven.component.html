@@ -1,0 +1,25 @@
+<form #myForm="ngForm">
+  <div class="form-group">
+    <input type="text" class="form-control" id="nome"
+      required minlength="4"
+      [(ngModel)]="myHero.nome" name="nome" #heroNome="ngModel" />
+  </div>
+  <div *ngIf="heroNome.errors != null && heroNome.errors.minlength != null">
+    Il valore deve essere di almeno 4 caratteri
+    <div>Mancano ancora {{ heroNome.errors.minlength.requiredLength - heroNome.errors.minlength.actualLength }} caratteri</div>
+  </div>
+  <div>Nome eroe status: {{ heroNome.status }}</div>
+  <div>
+    <pre>Errori nome eroe: {{ heroNome.errors | json }}</pre>
+  </div>
+</form>
+
+<div>
+  <pre>Form status: {{ myForm.status }}</pre>
+</div>
+
+<div>
+  <div>Nome: {{ myHero.nome }}</div>
+  <div>Potere: {{ myHero.power }}</div>
+  <div>AlterEgo: {{ myHero.alterEgo }}</div>
+</div>

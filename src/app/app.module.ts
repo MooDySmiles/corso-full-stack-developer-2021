@@ -12,6 +12,8 @@ import { ServiceComponentComponent } from './service-component/service-component
 import { PowPipe } from './pow.pipe';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { FormsModule } from '@angular/forms';
 
 /**
  * Oggetto di configurazione dei route di navigazione.
@@ -42,13 +44,17 @@ const routes: Routes = [
     component: ServiceComponentComponent,
   },
   {
-    path: '**',
-    redirectTo: 'page-not-found',
+    path: 'template-driven',
+    component: TemplateDrivenComponent,
   },
   {
     path: 'page-not-found',
     component: PageNotFoundComponent,
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'page-not-found',
+  },
 ];
 
 @NgModule({
@@ -63,11 +69,14 @@ const routes: Routes = [
     ServiceComponentComponent,
     PowPipe,
     PageNotFoundComponent,
+    TemplateDrivenComponent,
   ],
   imports: [
     BrowserModule,
     // .forRoot() accetta un oggetto di configurazione con la lista di rotte definite da noi
     RouterModule.forRoot(routes),
+    // Ci serve per far funzionare i form Template-Driven per l'utilizzo delle direttive ngModel e ngForm
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

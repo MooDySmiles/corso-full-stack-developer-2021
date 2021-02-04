@@ -6,31 +6,32 @@
                     questo componente sarà in grado di stare in ascolto dell'evento, riuscendo a catturarne anche il valore passato
   -->
   <app-primo
-  [courseName]="title"
-  (primoOutput)="onPrimoOutput($event)"
+    [courseName]="title"
+    (primoOutput)="onPrimoOutput($event)"
   ></app-primo>
 
   <button class="btn btn-primary" (click)="onCambiaMetodoLink()">Visualizza bottoni/link</button>
 
   <p *ngIf="showButtonLink">
-  <!--
-    routerLink è una direttiva fornita dal RouterModule, ci permette di creare link di navigazione tra le pagine della nostra
-    applicazione
+    <!--
+      routerLink è una direttiva fornita dal RouterModule, ci permette di creare link di navigazione tra le pagine della nostra
+      applicazione
 
-    se il valore passato in ingresso non inizia con la barra /, allora Angular lo gestisce come un path relativo, altrimenti come
-    un path assoluto partendo dalla radice
-  -->
-  <button routerLink="/direttive-strutturali">Direttive Strutturali</button>
-  <button routerLink="/direttive-attributo">Direttive Attributo</button>
-  <button routerLink="/pipe">Pipe</button>
-  <button routerLink="service">Service</button>
+      se il valore passato in ingresso non inizia con la barra /, allora Angular lo gestisce come un path relativo, altrimenti come
+      un path assoluto partendo dalla radice
+    -->
+    <button routerLink="/direttive-strutturali">Direttive Strutturali</button>
+    <button routerLink="/direttive-attributo">Direttive Attributo</button>
+    <button routerLink="/pipe">Pipe</button>
+    <button routerLink="/service">Service</button>
   </p>
 
   <p class="links" *ngIf="!showButtonLink">
-  <a routerLink="/direttive-strutturali">Direttive Strutturali</a>
-  <a routerLink="/direttive-attributo">Direttive Attributo</a>
-  <a routerLink="/pipe">Pipe</a>
-  <a routerLink="/service">Service</a>
+    <a routerLink="/direttive-strutturali">Direttive Strutturali</a>
+    <a routerLink="/direttive-attributo">Direttive Attributo</a>
+    <a routerLink="/pipe">Pipe</a>
+    <a routerLink="/service">Service</a>
+    <a routerLink="/template-driven">Template Driven</a>
   </p>
 
   <hr>
