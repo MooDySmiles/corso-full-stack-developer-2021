@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Hero } from '../models/hero.model';
 
 @Component({
@@ -13,6 +14,13 @@ export class TemplateDrivenComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onFormSubmit(form: NgForm) {
+    if (form.invalid) return;
+
+    // Teoricamente invio dei dati
+    alert('Invio del form');
   }
 
 }
